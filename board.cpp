@@ -60,13 +60,13 @@ bool Board::checkWinCol(int x, int y) {
 	}
 	y1 = 25 * (j + 1) + 12;
 	j = y + 1;
-	while (j <= size && this->getVal(x, j) == a) {
+	while (j <= size_of_board && this->getVal(x, j) == a) {
 		j++;
 		count++;
 	}
 	y2 = 25 * (j - 1) + 12;
 	if (count >= 5) {
-		drawWinLine(x1, y1, x2, y2);
+		drawWinLine(x1, y1, x2, y2, a);
 		return true;
 	}
 	return false;
@@ -75,7 +75,7 @@ bool Board::checkWinRow(int x, int y) {
 	int x1, x2, y1 = y * 25 + 12, y2 = y * 25 + 12;
 	int i = x + 1, count = 1;
 	int a = this->getVal(x, y);
-	while (i <= size && this->getVal(i, y) == a) {
+	while (i <= size_of_board && this->getVal(i, y) == a) {
 		i++;
 		count++;
 	}
@@ -87,7 +87,7 @@ bool Board::checkWinRow(int x, int y) {
 	}
 	x2 = 25 * (i + 1) + 12;
 	if (count >= 5) {
-		drawWinLine(x1, y1, x2, y2);
+		drawWinLine(x1, y1, x2, y2, a);
 		return true;
 	}
 	return false;
@@ -104,14 +104,14 @@ bool Board::checkWinFirstDiagonaly(int x, int y) {
 	x1 = 25 * (i + 1) + 12; y1 = 25 * (j + 1) + 12;
 	i = x + 1;
 	j = y + 1;
-	while (i <= size && j < size && this->getVal(i, j) == a) {
+	while (i <= size_of_board && j < size_of_board && this->getVal(i, j) == a) {
 		i++;
 		j++;
 		count++;
 	}
 	x2 = 25 * (i - 1) + 12; y2 = 25 * (j - 1) + 12;
 	if (count >= 5) {
-		drawWinLine(x1, y1, x2, y2);
+		drawWinLine(x1, y1, x2, y2, a);
 		return true;
 	}
 	return false;
@@ -120,7 +120,7 @@ bool Board::checkWinSecDiagonaly(int x, int y) {
 	int x1, x2, y1, y2;
 	int i = x - 1, j = y + 1, count = 1;
 	int a = this->getVal(x, y);
-	while (i > 0 && j <= size && this->getVal(i, j) == a) {
+	while (i > 0 && j <= size_of_board && this->getVal(i, j) == a) {
 		i--;
 		j++;
 		count++;
@@ -128,14 +128,14 @@ bool Board::checkWinSecDiagonaly(int x, int y) {
 	x1 = 25 * (i + 1) + 12; y1 = 25 * (j - 1) + 12;
 	i = x + 1;
 	j = y - 1;
-	while (i <= size && j > 0 && this->getVal(i, j) == a) {
+	while (i <= size_of_board && j > 0 && this->getVal(i, j) == a) {
 		i++;
 		j--;
 		count++;
 	}
 	x2 = 25 * (i - 1) + 12; y2 = 25 * (j + 1) + 12;
 	if (count >= 5) {
-		drawWinLine(x1, y1, x2, y2);
+		drawWinLine(x1, y1, x2, y2, a);
 		return true;
 	}
 	return false;

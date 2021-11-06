@@ -17,7 +17,6 @@ void initGL()
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 }
-
 // print string in screen
 void vprint(int x, int y, void* font, const char* string, ...)
 {
@@ -27,10 +26,9 @@ void vprint(int x, int y, void* font, const char* string, ...)
 	vsprintf_s(str, string, ap);
 	va_end(ap);
 
-	int len, i;
 	glRasterPos2f(x, y);
-	len = (int)strlen(str);
-	for (i = 0; i < len; i++)
+	int len = (int)strlen(str);
+	for (int i = 0; i < len; i++)
 	{
 		glutBitmapCharacter(font, str[i]);
 	}
@@ -41,13 +39,13 @@ void vprint2(int x, int y, float size, const char* string, ...) {
 	char str[1024];
 	vsprintf_s(str, string, ap);
 	va_end(ap);
+	
 	glPushMatrix();
 	glTranslatef(x, y, 0);
 	glScalef(size, size, 1);
 
-	int len, i;
-	len = (int)strlen(str);
-	for (i = 0; i < len; i++)
+	int len = (int)strlen(str);
+	for (int i = 0; i < len; i++)
 	{
 		glutStrokeCharacter(GLUT_STROKE_ROMAN, str[i]);
 	}
@@ -67,11 +65,45 @@ void drawTimeLine(int x, int y) {
 	}
 }
 // draw win line
-void drawWinLine(int x1, int y1, int x2, int y2) {
+void drawWinLine(int x1, int y1, int x2, int y2, int ch) {
+	if (x1 == x2) {
+		for (int k = y1; k <= y2; k += 25) {
+			glColor3f(1.0f, 0.0f, 1.0f);
+			glRectf(x1 - 12, k + 12, x1 + 12, k - 12);
+			if (ch == 'O') drawChessmanO(x1, k, SIZE);
+			else drawChessmanX(x1, k, SIZE);
+		}
+	}
+	else if (y1 == y2) {
+		for (int k = x2; k <= x1; k += 25) {
+			glColor3f(1.0f, 0.0f, 1.0f);
+			glRectf(k - 12, y1 + 12, k + 12, y1 - 12);
+			if (ch == 'O') drawChessmanO(k, y1, SIZE);
+			else drawChessmanX(k, y1, SIZE);
+		}
 
-	glColor3f(0.73f, 0.3f, 0.8f);
-	for (int i = -1; i < 2; i++) {
-		drawLine(x1, y1, x2, y2);
+	}
+	else if (y1 > y2) {
+		for (int k = 0; y1 - k * 25 >= y2; k++) {
+			int x = x1 + k * 25;
+			int y = y1 - k * 25;
+			glColor3f(1.0f, 0.0f, 1.0f);
+			glRectf(x - 12, y + 12, x + 12, y - 12);
+			if (ch == 'O') drawChessmanO(x, y, SIZE);
+			else drawChessmanX(x, y, SIZE);
+		}
+	
+	}
+	else {
+		for (int k = 0; y2 - k * 25 >= y1; k++) {
+			int x = x1 + k * 25;
+			int y = y1 + k * 25;
+			glColor3f(1.0f, 0.0f, 1.0f);
+			glRectf(x - 12, y + 12, x + 12, y - 12);
+			if (ch == 'O') drawChessmanO(x, y, SIZE);
+			else drawChessmanX(x, y, SIZE);
+		}
+
 	}
 	glFlush();
 }
@@ -135,15 +167,6 @@ void drawChessmanX(int x, int y, int R) {
 }
 void drawBorder(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
 	glBegin(GL_LINE_LOOP);
-	glVertex2i(x1, y1);
-	glVertex2i(x2, y2);
-	glVertex2i(x3, y3);
-	glVertex2i(x4, y4);
-	glEnd();
-}
-
-void drawRectangular(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-	glBegin(GL_POLYGON);
 	glVertex2i(x1, y1);
 	glVertex2i(x2, y2);
 	glVertex2i(x3, y3);
