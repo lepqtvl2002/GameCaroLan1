@@ -1,5 +1,4 @@
 #pragma once
-//#include "draw.h"
 #include "bot.h"
 extern Board b;
 enum class GameState {

@@ -350,3 +350,18 @@ Round3 * Player 1 W * Mon Nov 22 12:12:43 2021
 *Round 4 * Computer / Mon Nov 22 14:59:15 2021
 *Round 1 * Computer / Mon Nov 22 15:03:05 2021
 *Round 2 * Computer / Mon Nov 22 15:03:25 2021
+*Round 1 * Computer / Mon Nov 22 18:54:39 2021
+*Round 1 * Computer / Mon Nov 22 18:57:26 2021
+*Round 1 * Computer / Mon Nov 22 18:59:34 2021
+*Round 1 * Player 2 / Mon Nov 22 19:00:26 2021
+*Round 2 * Player 1 / Mon Nov 22 19:00:43 2021
+*Round 1 * Computer / Mon Nov 22 19:03:30 2021
+*Round 1 * Computer / Mon Nov 22 19:04:01 2021
+*Round 2 * Computer / Mon Nov 22 19:04:22 2021
+*Round 3 * Computer / Mon Nov 22 19:04:35 2021
+*Round 4 * Computer / Mon Nov 22 19:05:31 2021
+*Round 5 * Computer / Mon Nov 22 19:06:04 2021
+*Round 6 * Computer / Mon Nov 22 19:06:27 2021
+*Round 1 * Computer / Mon Nov 22 19:08:52 2021
+*Round 2 * Computer / Mon Nov 22 19:11:22 2021
+*Round 1 * Player 1 / Mon Nov 22 19:20:58 2021
