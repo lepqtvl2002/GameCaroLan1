@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="board.cpp" />
+    <ClCompile Include="bot.cpp" />
     <ClCompile Include="draw.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
@@ -147,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="board.h" />
+    <ClInclude Include="bot.h" />
     <ClInclude Include="draw.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="o.h" />

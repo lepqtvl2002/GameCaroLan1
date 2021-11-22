@@ -5,13 +5,13 @@ Point::Point() {
 	y = 0;
 }
 Point::Point(int i, int j) {
-	x = i * 25 + 12;
-	y = j * 25 + 12;
+	x = i;
+	y = j;
 	val = 0;
 }
 Point::Point(int i, int j, int v) {
-	x = i * 25 + 12;
-	y = j * 25 + 12;
+	x = i;
+	y = j;
 	val = v;
 }
 Point::~Point() {

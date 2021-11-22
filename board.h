@@ -1,6 +1,5 @@
 #pragma once
 #include "point.h"
-
 class Board {
 	const int n = 20 + 1;
 	Point* board[21][21];
@@ -23,6 +22,6 @@ public:
 	bool checkWinCol(int, int);
 	bool checkWinFirstDiagonaly(int, int);
 	bool checkWinSecDiagonaly(int, int);
-	void DrawS(int, int);
+	void drawChessman(int, int);
 };
 

@@ -1,11 +1,7 @@
 #pragma once
-//#include <fstream>
-//#include <iostream>
-//#include <string>
-//#include <ctime>
-//using namespace std;
-#include "draw.h"
-
+//#include "draw.h"
+#include "bot.h"
+extern Board b;
 enum class GameState {
 	Running,	// Playing
 	PlayWith,   // PvP or PvC
@@ -23,6 +19,7 @@ enum class GameGenre {
 
 static int xx, yy;
 static int X, Y;
+static int _x, _y;
 static int varTimer = 1;
 
 static int round_of_play = 0;
@@ -45,3 +42,4 @@ void Timer(int value);
 void passive(int x, int y);
 void writeToFile(int r, const char* string);
 void readFromFile();
+void lineCountdown(int x, int y); 

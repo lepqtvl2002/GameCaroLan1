@@ -1,5 +1,5 @@
 #include "game.h"
-
+Board b;
 
 int main(int argc, char** argv) {
 	int mode = GLUT_SINGLE | GLUT_RGB;

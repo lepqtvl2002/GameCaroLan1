@@ -9,7 +9,7 @@ public:
 	virtual ~X() {
 
 	}
-	virtual void DrawS() {
-		drawChessmanX(this->getX(), this->getY(), SIZE);
+	virtual void drawChessman() {
+		drawChessmanX(this->getX() * 25 + 12, this->getY() * 25 + 12, SIZE);
 	}
 };

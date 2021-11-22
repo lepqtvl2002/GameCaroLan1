@@ -60,9 +60,8 @@ void drawLine(int x1, int y1, int x2, int y2) {
 }
 // draw time line
 void drawTimeLine(int x, int y) {
-	for (int i = 1; i < 10; i++) {
-		drawLine(x, y - i, x + 150, y - i);
-	}
+	glRectf(x, y, x + 150, y - 9);
+	glColor3f(1.0f, 1.0f, 1.0f);
 }
 // draw win line
 void drawWinLine(int x1, int y1, int x2, int y2, int ch) {

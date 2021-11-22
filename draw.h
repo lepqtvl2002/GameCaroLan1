@@ -10,13 +10,12 @@
 #include <mmsystem.h>
 #include <GL/glut.h>
 #include "board.h"
-static Board b;
-#define WIDTH 600
+#define WIDTH 550
 #define HEIGHT 600
 #define SIZE 9
 #define INTERVAL 30
 static const int size_of_board = 20;
-
+static int countdown;
 static const char* filePath = "history.txt";
 // draw blah blah
 

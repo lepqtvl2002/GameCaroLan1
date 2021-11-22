@@ -29,8 +29,8 @@ void Board::input(int i, int j, int ch) {
 	else board[i][j] = new Point(i, j);
 }
 void Board::setLocation(int i, int j) {
-	this->board[i][j]->setX(i * 25 + 12);
-	this->board[i][j]->setY(j * 25 + 12);
+	this->board[i][j]->setX(i);
+	this->board[i][j]->setY(j);
 }
 int Board::getX(int i, int j) {
 	return this->board[i][j]->getX();
@@ -149,6 +149,6 @@ bool Board::checkWin(int i, int j) {
 	return false;
 }
 
-void Board::DrawS(int i, int j) {
-	this->board[i][j]->DrawS();
+void Board::drawChessman(int i, int j) {
+	this->board[i][j]->drawChessman();
 }
