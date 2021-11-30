@@ -63,6 +63,12 @@ void drawTimeLine(int x, int y) {
 	glRectf(x, y, x + 150, y - 9);
 	glColor3f(1.0f, 1.0f, 1.0f);
 }
+// timer countdown
+void lineCountdown(int x, int y) {
+	glRectf(x, y, x + 150 - countdown, y - 9);
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glRectf(x + 150 - countdown, y, x + 150, y - 9);
+}
 // draw win line
 void drawWinLine(int x1, int y1, int x2, int y2, int ch) {
 	if (x1 == x2) {

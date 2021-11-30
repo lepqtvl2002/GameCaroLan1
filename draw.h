@@ -15,8 +15,8 @@
 #define SIZE 9
 #define INTERVAL 30
 static const int size_of_board = 20;
-static int countdown;
 static const char* filePath = "history.txt";
+extern int countdown;
 // draw blah blah
 
 void initGL();
@@ -27,6 +27,7 @@ void vprint2(int x, int y, float size, const char* string, ...);
 void drawLine(int x1, int y1, int x2, int y2);
 
 void drawTimeLine(int x, int y);
+void lineCountdown(int x, int y);
 void drawWinLine(int x1, int y1, int x2, int y2, int ch);
 
 void draw8point(int xc, int yc, int x, int y);

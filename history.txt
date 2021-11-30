@@ -365,3 +365,35 @@ Round3 * Player 1 W * Mon Nov 22 12:12:43 2021
 *Round 1 * Computer / Mon Nov 22 19:08:52 2021
 *Round 2 * Computer / Mon Nov 22 19:11:22 2021
 *Round 1 * Player 1 / Mon Nov 22 19:20:58 2021
+*Round 1 * Player P / Thu Nov 25 19:38:02 2021
+*Round 2 * Computer / Thu Nov 25 19:40:17 2021
+*Round 3 * Computer / Thu Nov 25 19:41:30 2021
+*Round 4 * Player P / Thu Nov 25 19:42:20 2021
+*Round 5 * Player P / Thu Nov 25 19:42:58 2021
+*Round 6 * Computer / Thu Nov 25 19:43:42 2021
+*Round 7 * Player P / Thu Nov 25 19:44:07 2021
+*Round 8 * Computer / Thu Nov 25 19:45:21 2021
+*Round 9 * Player P / Thu Nov 25 19:45:53 2021
+*Round 1 * Computer / Thu Nov 25 19:46:42 2021
+*Round 2 * Computer / Thu Nov 25 19:47:35 2021
+*Round 3 * Computer / Thu Nov 25 19:48:43 2021
+*Round 4 * Computer / Thu Nov 25 19:49:17 2021
+*Round 1 * Player P / Thu Nov 25 19:50:56 2021
+*Round 2 * Computer / Thu Nov 25 19:51:24 2021
+*Round 1 * Player 2 / Thu Nov 25 20:53:41 2021
+*Round 1 * Player P / Thu Nov 25 21:02:40 2021
+*Round 2 * Computer / Thu Nov 25 21:03:10 2021
+*Round 1 * Computer / Tue Nov 30 09:16:53 2021
+*Round 1 * Player P / Tue Nov 30 14:17:23 2021
+*Round 1 * Player P / Tue Nov 30 14:19:02 2021
+*Round 1 * Computer / Tue Nov 30 15:12:57 2021
+*Round 1 * Computer / Tue Nov 30 15:36:34 2021
+*Round 1 * Player 2 / Tue Nov 30 15:36:55 2021
+*Round 2 * Player 2 / Tue Nov 30 15:37:04 2021
+*Round 3 * Player 1 / Tue Nov 30 15:37:11 2021
+*Round 4 * Player 2 / Tue Nov 30 15:37:24 2021
+*Round 1 * Computer / Tue Nov 30 16:25:22 2021
+*Round 1 * Player P / Tue Nov 30 16:30:23 2021
+*Round 1 * Computer / Tue Nov 30 19:02:16 2021
+*Round 2 * Computer / Tue Nov 30 19:02:58 2021
+*Round 3 * Computer / Tue Nov 30 19:03:08 2021
