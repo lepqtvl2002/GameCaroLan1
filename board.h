@@ -1,19 +1,19 @@
 ﻿#pragma once
 #include "point.h"
 class Board {
-	const int n = 20; // Kích thước của bảng 20 x 20
-	Point* board[21][21]; // Mảng hai chiều chứa dữ liệu các điểm
+	const int n = 20;				// Kích thước của bảng 20 x 20
+	Point* board[21][21];			// Mảng hai chiều chứa dữ liệu các điểm
 public:
 	Board();
 	virtual ~Board();
 	
-	int STT = 0; // Số bước đi
-	int getSize(); // Đưa ra kích thước bàn cờ	
-	void reset(); // Đặt lại giá trị cho các điểm trên bàn cờ
-	int operator () (int, int); // Lấy ra giá trị điểm trên bàn cờ theo dạng b(i, j)
-	int getVal(int, int); // Lấy ra giá trị điểm trên bàn cờ
-	void input(int, int, int); // Gán giá trị A cho một điểm có tọa độ i, j theo dạng b.input(i, j, A) 
-	void setLocation(int, int); // Gán giá trị tọa độ	
+	int STT = 0;					// Số bước đi
+	int getSize();					// Đưa ra kích thước bàn cờ	
+	void reset();					// Đặt lại giá trị cho các điểm trên bàn cờ
+	int operator () (int, int);		// Lấy ra giá trị điểm trên bàn cờ theo dạng b(i, j)
+	int getVal(int, int);			// Lấy ra giá trị điểm trên bàn cờ
+	void input(int, int, int);		// Gán giá trị A cho một điểm có tọa độ i, j theo dạng b.input(i, j, A) 
+	void setLocation(int, int);		// Gán giá trị tọa độ	
 	// Gán giá trị tọa độ
 	int getX(int, int);
 	int getY(int, int);

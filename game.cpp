@@ -133,17 +133,21 @@ void Game::displayStartScreen()
 
 	if (b.STT != 0) {
 		char ch;
-		if (b.STT % 2) ch = 'O';
+		if (b.STT - round_of_play == MAX) ch = 'D';
+		else if (b.STT % 2) ch = 'O';
 		else ch = 'X';
 		vprint2(100, 400, 0.5, "Play again");
 		vprint2(150, 300, 0.3, "Menu");
 		vprint2(150, 200, 0.3, "Quit");
-		vprint2(200, 90, 0.2, "Tong so buoc da di: %d", b.STT);
+		vprint2(200, 90, 0.2, "Tong so buoc da di: %d", b.STT - round_of_play);
 		glColor3f((rand() % 250) / 255.0, (rand() % 250) / 255.0, (rand() % 250) / 255.0);
-		if (ch == 'X') drawX(330, 240, 50);
-		else CircleBres(330, 240, 50);
-		if (varTimer > 4) vprint2(400, 200, 0.4, "WON!!!");
-		else vprint2(400, 200, 0.2, "WON!!!");
+		if (ch == 'D') vprint2(300, 200, 0.6, "DRAW");
+		else {
+			if (ch == 'X') drawX(330, 240, 50);
+			else CircleBres(330, 240, 50);
+			if (varTimer > 4) vprint2(400, 200, 0.4, "WON!!!");
+			else vprint2(400, 200, 0.2, "WON!!!");
+		}
 	}
 	else {
 		//glColor3f(1.0f, 1.0f, 1.0f);

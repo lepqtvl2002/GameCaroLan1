@@ -100,10 +100,7 @@ void mouse(int button, int state, int mouse_x, int mouse_y) {
 									if (g.sound) PlaySound(TEXT("AmazingWorld"), NULL, SND_ASYNC);
 									g.gameState = Game::GameState::GameOver;
 								}
-						}
-						else {
-							printf("Da dien roi!!!\n");
-						}
+						}						
 					}
 				}
 				else {
@@ -220,7 +217,8 @@ void mydisplay() {
 		g.displayStartScreen();
 	}
 
-	if (countdown == 150 && g.gameState == Game::GameState::Running && g.gameGenre == Game::GameGenre::PvP) {
+	if (((countdown == 150)	&& (g.gameState == Game::GameState::Running && g.gameGenre == Game::GameGenre::PvP))
+		|| (g.b.STT - g.round_of_play == MAX)) {
 		g.round_of_play++;
 		if (g.b.STT % 2) {
 			g.score1++;

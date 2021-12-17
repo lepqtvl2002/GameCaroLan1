@@ -19,5 +19,7 @@ public:
 	void setX(int);
 	void setY(int);
 	void setVal(int);
-	virtual void drawChessman(){}
+	virtual void drawChessman(){
+		/* Nothing */ 
+	}
 };

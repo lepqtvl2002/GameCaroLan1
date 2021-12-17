@@ -11,13 +11,17 @@ Board::Board() {
 			board[i][j] = new Point(i, j);
 }
 Board::~Board() {
+	for (int i = 1; i <= n; i++)
+		for (int j = 1; j <= n; j++)
+			delete board[i][j];
 }
 int Board::getSize() {
 	return n;
 }
 void Board::reset() {
-	for (int i = 0; i <= n; i++)
-		for (int j = 0; j <= n; j++) {
+
+	for (int i = 1; i <= n; i++)
+		for (int j = 1; j <= n; j++) {
 			this->board[i][j] = new Point(i, j, 0);
 		}
 }
@@ -30,7 +34,6 @@ int Board::getVal(int i, int j) {
 void Board::input(int i, int j, int ch) {
 	if (ch == 'O') board[i][j] = new O(i, j, ch);
 	else if (ch == 'X') board[i][j] = new X(i, j, ch);
-	else board[i][j] = new Point(i, j);
 }
 void Board::setLocation(int i, int j) {
 	this->board[i][j]->setX(i);
@@ -47,8 +50,8 @@ bool Board::check(int i, int j) {
 	else return false;
 }
 bool Board::checkArea(int i, int j) {
-	if (i < 1 || i >= this->n) return false;
-	if (j < 1 || j >= this->n) return false;
+	if (i < 1 || i > this->n) return false;
+	if (j < 1 || j > this->n) return false;
 	return true;
 }
 //
@@ -862,37 +865,24 @@ long Board::SoDiemPhongThu_DuyetCheo2(long Dong, long Cot) {
 Point Board::timKiemNuocDi() {
 	int dong = 1, cot = 1;
 	long Diem = 0;
-	for (int i = 1; i <= size_of_board; i++)
-	{
-		for (int j = 1; j <= size_of_board; j++)
-		{
+	for (int i = 1; i <= size_of_board; i++) {
+		for (int j = 1; j <= size_of_board; j++) {
 			long DiemTanCong = 0;
 			long DiemPhongThu = 0;
-			if (this->getVal(i, j) == 0)
-			{
-				DiemTanCong += SoDiemTanCong_DuyetDoc(i, j);
-				DiemTanCong += SoDiemTanCong_DuyetNgang(i, j);
-				DiemTanCong += SoDiemTanCong_DuyetCheo1(i, j);
-				DiemTanCong += SoDiemTanCong_DuyetCheo2(i, j);
-
-				DiemPhongThu += SoDiemPhongThu_DuyetDoc(i, j);
-				DiemPhongThu += SoDiemPhongThu_DuyetNgang(i, j);
-				DiemPhongThu += SoDiemPhongThu_DuyetCheo1(i, j);
-				DiemPhongThu += SoDiemPhongThu_DuyetCheo2(i, j);
-
-				if (DiemTanCong > DiemPhongThu)
-				{
-					if (Diem < DiemTanCong)
-					{
+			if (this->getVal(i, j) == 0) {
+				DiemTanCong += SoDiemTanCong_DuyetDoc(i, j) + SoDiemTanCong_DuyetNgang(i, j) 
+					+ SoDiemTanCong_DuyetCheo1(i, j) + SoDiemTanCong_DuyetCheo2(i, j);
+				DiemPhongThu += SoDiemPhongThu_DuyetDoc(i, j) + SoDiemPhongThu_DuyetNgang(i, j)
+				+ SoDiemPhongThu_DuyetCheo1(i, j) + SoDiemPhongThu_DuyetCheo2(i, j);
+				if (DiemTanCong > DiemPhongThu)	{
+					if (Diem < DiemTanCong) {
 						Diem = DiemTanCong;
 						dong = i;
 						cot = j;
 					}
 				}
-				else
-				{
-					if (Diem < DiemPhongThu)
-					{
+				else {
+					if (Diem < DiemPhongThu) {
 						Diem = DiemPhongThu;
 						dong = i;
 						cot = j;
