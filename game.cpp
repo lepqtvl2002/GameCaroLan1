@@ -1,4 +1,4 @@
-#include "game.h"
+﻿#include "game.h"
 Game::Game() {
 	xx = 0;
 	yy = 0;
@@ -27,15 +27,18 @@ int Game::Fix(int x) {
 void Game::drawBackground(int w, int h)
 {
 	glViewport(0, 0, w, h);
+	// vien ngoai cung
 	glColor3f(1.0f, 0.8f, 0.9f);
 	glRectf(0, 0, w, h);
+	// vien ngoai bang
 	glColor3f(1.0f, 0.6f, 0.8f);
 	glRectf(0, 0, w, h - 70);
+	// bang trang
 	glColor3f(1.0f, 1.0f, 1.0f);
 	glRectf(25, 25, w - 25, h - 75);
 	// ve bang
 	glColor3f(0.8f, 0.8f, 0.8f);
-	glViewport(0, 0, WIDTH, HEIGHT);
+	glViewport(0, 0, width, height);
 	for (int i = 1; i <= size_of_board + 1; i++) {
 		drawLine(i * 25, 25, i * 25, (size_of_board + 1) * 25);
 		drawLine(25, i * 25, (size_of_board + 1) * 25, i * 25);
@@ -120,8 +123,9 @@ void Game::drawBackground(int w, int h)
 }
 void Game::displayStartScreen()
 {
+	glViewport(0, 0, width, height);
 	glColor3f(1.0f, 1.0f, 1.0f);
-	glRectf(0, HEIGHT, WIDTH, 0);
+	glRectf(0, height, width, 0);
 
 	glColor3f((rand() % 250) / 255.0, (rand() % 250) / 255.0, (rand() % 250) / 255.0);
 
@@ -178,12 +182,12 @@ void Game::aboutGame() {
 	glColor3f(0.6f, 0.8f, 0.85f);
 	glRectf(0, HEIGHT, WIDTH, 0);
 	glColor3f(1, 1, 1);
-	vprint2(200, 500, 0.2, "Game Caro");
+	vprint2(100, 500, 0.4, "Game Caro");
 	vprint2(50, 400, 0.2, "Nhom 7");
 	vprint2(50, 350, 0.2, "Hoc sinh thuc hien:");
 	vprint2(150, 300, 0.2, "Tran Duc Thang");
 	vprint2(150, 250, 0.2, "Hoang Le Thanh Phuong");
-	vprint2(50, 200, 0.2, "GVHD: Le Thi My Hanh");
+	vprint2(150, 200, 0.2, "Nguyen Quoc Tinh");
 }
 void Game::guideGame() {
 	glColor3f(1.0f, 0.6f, 0.8f);

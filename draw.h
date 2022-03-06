@@ -10,8 +10,10 @@
 #include <mmsystem.h>
 #include <GL/glut.h>
 #include "board.h"
-#define WIDTH 550
-#define HEIGHT 600
+static int WIDTH = 550;
+static int HEIGHT = 600;
+static int width = 550;
+static int height = 600;
 #define SIZE 9
 #define INTERVAL 30
 static const int size_of_board = 20;

@@ -13,8 +13,10 @@ int main(int argc, char** argv) {
 
 	PlaySound(TEXT("AmazingWorld"), NULL, SND_ASYNC);
 	initGL();
+	
 	glutMouseFunc(mouse);
-	glutDisplayFunc(mydisplay);
+	glutReshapeFunc(ReShape);
+	glutDisplayFunc(myDisplay);
 	glutPassiveMotionFunc(passive);
 	glutTimerFunc(0, Timer, 0);
 	glutMainLoop();	
